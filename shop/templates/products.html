@@ -1,0 +1,29 @@
+{% extends 'base.html'%} {% block content %}
+
+<table class="table mt-5 table-bordered table-striped table-hover">
+  <thead class="table-dark">
+    <tr>
+      <th>Title</th>
+      <th>Category</th>
+      <th>Price</th>
+      <th>In Stock</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for product in products %}
+    <tr>
+      <td>
+        <a href={% url 'shop:single_product' product.id %}>{{ product.title }}</a>
+        <!-- href="..." is a relative URL, so the browser appends it to the current path (e.g., /shop/ → /shop/1). -->
+      </td>
+      <td>{{ product.category }}</td>
+      <td>{{ product.price }}</td>
+      <td>{{ product.in_stock }}</td>
+      <td><button class="btn btn-primary">Buy</button></td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+{% endblock %} {% block title %} All courses {% endblock %}

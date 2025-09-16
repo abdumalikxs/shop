@@ -1,0 +1,16 @@
+<!-- prettier-ignore -->
+{% extends "base.html" %} 
+
+{% block title %}
+ {{product.title}}
+{% endblock %}
+
+
+{%block content %}
+
+<h1 class="mt-5">Product title: {{product.title}}</h1>
+<h2>Category: {{product.category}}</h2>
+<p>Price: {{product.price}}</p>
+<p>In stock: {{product.in_stock}}</p>
+<button class="btn btn-primary">Buy</button>
+{% endblock %}
